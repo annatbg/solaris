@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Condensed&family=Secular+One&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(90deg, #0c164d, #190b22);
+}
+
+.planetWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.textHeadings {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding: 3rem;
+  text-transform: uppercase;
+}
+
+.textHeadings h1 {
+  margin: 0;
+  font-size: 3.75rem;
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.9rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.textHeadings h2 {
+  margin: 0;
+  color: #ffd029;
+  font-size: 1.5;
+  font-family: "Lora", serif;
+  font-weight: 400;
+  letter-spacing: 2rem;
+  text-transform: uppercase;
+}
+
+#planet0 {
+  border-radius: 50%;
+  width: 79.8rem;
+  height: 79.8rem;
+  background-color: #ffd029;
+  position: absolute;
+  top: -10rem;
+  left: -72.5rem;
+  cursor: pointer;
+}
+
+#planet1 {
+  border-radius: 50%;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #888888;
+  position: absolute;
+  top: 30rem;
+  left: 12rem;
+  cursor: pointer;
+}
+
+#planet2 {
+  border-radius: 50%;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #e7cdcd;
+  position: absolute;
+  top: 29.5rem;
+  left: 15rem;
+  cursor: pointer;
+}
+
+#planet3 {
+  border-radius: 50%;
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #428ed4;
+  position: absolute;
+  top: 29.4rem;
+  left: 19rem;
+  cursor: pointer;
+}
+
+#planet4 {
+  border-radius: 50%;
+  width: 0.87rem;
+  height: 0.87rem;
+  background-color: #ef5f5f;
+  position: absolute;
+  top: 30rem;
+  left: 23rem;
+  cursor: pointer;
+}
+
+#planet5 {
+  border-radius: 50%;
+  width: 11.75rem;
+  height: 11.75rem;
+  background-color: #e29468;
+  position: absolute;
+  top: 24rem;
+  left: 28rem;
+  cursor: pointer;
+}
+
+#planet6 {
+  border-radius: 50%;
+  width: 9rem;
+  height: 9rem;
+  background-color: #c7aa72;
+  position: absolute;
+  top: 25rem;
+  left: 45rem;
+  cursor: pointer;
+}
+
+#circles {
+  border-radius: 50%;
+  width: 12rem;
+  height: 0.5rem;
+  background-color: #ffffff60;
+  position: absolute;
+  top: 4.5rem;
+  left: -1.5rem;
+  transform: rotate(150deg);
+  cursor: pointer;
+}
+
+#planet7 {
+  border-radius: 50%;
+  width: 4.12rem;
+  height: 4.12rem;
+  background-color: #c9d4f1;
+  position: absolute;
+  top: 28rem;
+  left: 60rem;
+  cursor: pointer;
+}
+
+#planet8 {
+  border-radius: 50%;
+  width: 4.12rem;
+  height: 4.12rem;
+  background-color: #7a91a7;
+  position: absolute;
+  top: 28rem;
+  left: 69rem;
+  cursor: pointer;
+}
+
+#planetOverlay {
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: #190b22; */
+  background-color: #0c164d;
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255) 0px,
+      transparent 4px
+    ),
+    radial-gradient(white, rgba(255, 255, 255, 0.2) 0px, transparent 7px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 0px, transparent 10px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: auto;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  padding-bottom: 15rem;
+}
+
+#planetText {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: left; */
+  /* align-items: left; */
+  color: #fff;
+  z-index: 200;
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+#planetText h1 {
+  font-size: 3.75rem;
+  margin-bottom: 0;
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#planetText h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #ffd029;
+  font-size: 1.5;
+  font-family: "Lora", serif;
+  font-weight: 400;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+}
+
+#planetText p {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.12rem;
+  font-weight: 300;
+  line-height: 1.9rem;
+  margin-top: 1rem;
+  width: 80%;
+}
+
+ul {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+li {
+  font-family: "Secular One", sans-serif;
+  font-size: 1.12rem;
+  margin: 0;
+  /* border: solid 1px red; */
+}
+
+li:nth-child(5n) {
+  grid-column: span 2;
+}
+
+li h4 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+li p {
+  margin: 0;
+}
+
+#closeButton {
+  margin-top: 0;
+  margin-bottom: 5rem;
+  background-color: #132278;
+  padding: 1rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Roboto Condensed", sans-serif;
+  text-transform: uppercase;
+}
