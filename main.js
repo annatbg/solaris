@@ -28,7 +28,6 @@ closeButton.addEventListener("click", () => {
 });
 
 // ~~~~~~~~~ VARIABLER ~~~~~~~~~~~
-import { apiKey } from "./key.js";
 const keyURL = "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys";
 const baseURL =
   "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies";
@@ -46,13 +45,16 @@ async function getApiKey() {
     console.error("ooops, something went wrong", resp.status);
     return;
   }
-  // let data = await resp.json();
-  // console.log("nyckel", data);
+  let data = await resp.json();
+  return data.key;
 }
 
-// funktion som hämtar all planetdata från endpointen bodies. funktionen getApiKey kallas som parameter
-async function getPlanets(getApiKey) {
+// funktion som hämtar all planetdata från endpointen bodies.
+async function getPlanets() {
   try {
+    const apiKey = await getApiKey();
+    console.log("apiKey i getPlanets", apiKey);
+
     const response = await fetch(baseURL, {
       method: "GET",
       headers: { "x-zocom": apiKey },
@@ -66,13 +68,15 @@ async function getPlanets(getApiKey) {
   } catch (error) {
     console.error(error.message);
   }
-  console.log("bodies", planetsData, apiKey);
+  console.log("array", planetsData);
+  return planetsData;
 }
 
 // funktion som inväntar datan från getPlanets, letar efter ett matchande id, och visar aktuell data för planeten med DOM. (funktionen kallas genom click-events på varje planet)
 async function displayPlanetInfo(planetId) {
   // inväntar datan från getPlanets
-  await getPlanets();
+  const planetsData = await getPlanets();
+
   // söker efter matchande planet-id med find-metoden?
   const foundPlanet = planetsData.find((planet) => planet.id === planetId);
   // om ingen planet hittas loggas felmeddelande
