@@ -26,12 +26,27 @@ closeButton.addEventListener("click", () => {
   planetOverlay.style.display = "none";
   console.log("close button clicked");
 });
+// Ändrar färg på planet0 i planetOverlay
+const planet0Overlay = document
+  .getElementById("planetOverlay")
+  .querySelector("#planet0");
 
 // ~~~~~~~~~ VARIABLER ~~~~~~~~~~~
 const keyURL = "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/keys";
 const baseURL =
   "https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies";
 let planetsData = {};
+const planetColors = {
+  0: "#ffd029", // Sun
+  1: "#888888", // Mercurius
+  2: "#e7cdcd", // Venus
+  3: "#428ed4", // Earth
+  4: "#ef5f5f", // Mars
+  5: "#e29468", // Jupiter
+  6: "#c7aa72", // Saturnus
+  7: "#c9d4f1", // Uranus
+  8: "#7a91a7", // Neptunus
+};
 
 //   ~~~~~~~ DEKLARERAR FUNKTIONERNA ~~~~~~~~~
 
@@ -87,10 +102,20 @@ async function displayPlanetInfo(planetId) {
 
   console.log("planet", foundPlanet.name, "clicked!");
 
+  // Hittar en bakgrundsfärg från variabeln planetColors som matchar id't
+  const bgColor = planetColors[planetId];
+
+  // Set the background color of #planet0
+  const planet0 = document
+    .getElementById("planetOverlay")
+    .querySelector("#planet0");
+  planet0.style.backgroundColor = bgColor;
+
   // eftersom endpointen "moons" är en array, görs listan till en sträng med metoden join, separerade med parametern ", ". Strängen sparas i variabeln moonString.
   const moonString = foundPlanet.moons.join(", ");
   // style på planetOverlay ändras till flex föratt visa overlay-sidan med planet info
   planetOverlay.style.display = "flex";
+
   // lägger till data i elementet planetText med template literals
   planetText.innerHTML = `<h1> ${foundPlanet.name} </h1> <h2>${foundPlanet.latinName}</h2> 
   <p> ${foundPlanet.desc} <p>

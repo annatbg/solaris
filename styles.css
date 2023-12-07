@@ -188,12 +188,15 @@ body {
   padding-bottom: 15rem;
 }
 
+#planetOverlay #planet0 {
+  box-shadow: 0 0 10px rgba(19, 34, 120, 0.5), 0 0 20px rgba(19, 34, 120, 1);
+}
+
 #planetText {
-  width: 80%;
+  width: 60%;
   display: flex;
   flex-direction: column;
-  /* justify-content: left; */
-  /* align-items: left; */
+  /* margin-left: 2rem; */
   color: #fff;
   z-index: 200;
   padding: 2rem;
@@ -231,6 +234,7 @@ body {
 }
 
 ul {
+  margin-left: 0;
   margin-top: 2rem;
   margin-bottom: 1rem;
   list-style: none;
